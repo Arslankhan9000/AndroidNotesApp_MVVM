@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E8E8E8"
+    android:padding="5sp"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/notesFilterContainer"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        >
+        <ImageView
+            android:layout_width="35sp"
+            android:layout_height="35sp"
+            android:background="@drawable/circle_filter"
+            android:src="@drawable/ic_baseline_menu_24"
+            android:padding="5sp"
+            android:layout_margin="12sp"
+
+            />
+
+        <TextView
+            android:id="@+id/noFilter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no_filter"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/black"
+            android:layout_margin="5sp"
+            android:background="@drawable/filter_selected_shape"
+            android:paddingStart="12sp"
+            android:paddingEnd="12sp"
+            android:paddingTop="6sp"
+            android:paddingBottom="6sp"
+            android:textSize="12sp"
+            />
+
+        <TextView
+            android:id="@+id/highToLowFilter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/high_to_low"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/black"
+            android:layout_margin="5sp"
+            android:background="@drawable/filter_unselected_shape"
+            android:paddingStart="12sp"
+            android:paddingEnd="12sp"
+            android:paddingTop="6sp"
+            android:paddingBottom="6sp"
+            android:textSize="12sp"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/low_to_high"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/black"
+            android:layout_margin="5sp"
+            android:background="@drawable/filter_unselected_shape"
+            android:paddingStart="12sp"
+            android:paddingEnd="12sp"
+            android:paddingTop="6sp"
+            android:paddingBottom="6sp"
+            android:textSize="12sp"
+            android:id="@+id/lowToHighFilter"
+            />
+
+
+    </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/notesRecyclerView"
+        android:layout_below="@+id/notesFilterContainer"
+        />
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="20sp"
+        android:backgroundTint="@color/blue"
+        android:src="@drawable/action_add"
+        android:id="@+id/addNotesActionBtn"
+        android:contentDescription="TODO" />
+</RelativeLayout>

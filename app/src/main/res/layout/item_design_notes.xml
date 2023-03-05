@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8sp"
+        app:cardElevation="4sp"
+        app:cardCornerRadius="6sp"
+        >
+        <View
+            android:layout_width="20sp"
+            android:layout_height="20sp"
+            android:background="@drawable/green_dot"
+            android:layout_margin="10sp"
+            android:layout_gravity="right"
+            android:id="@+id/itemNotesPriority"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_margin="8sp"
+            >
+          <TextView
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:text="Title"
+              android:id="@+id/itemNotesTitle"
+              android:fontFamily="@font/poppins"
+              android:padding="6sp"
+              />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Subtitle"
+                android:id="@+id/itemNotesSubTitle"
+                android:fontFamily="@font/poppins"
+                android:padding="6sp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="10 Nov 20222"
+                android:textColor="@color/black"
+                android:id="@+id/itemNotesDate"
+                android:fontFamily="@font/poppins_bold"
+                android:padding="6sp"
+                />
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</LinearLayout>
