@@ -12,7 +12,7 @@ import java.util.List;
 
 public class NotesRepository {
 
-    // NotesRepository me hm apne actions perform krwayngy
+    // In NotesRepository We perform our actions here like update, delete, or insert notes and fitler 
 
     public DaoClass notesDaoR;
 
@@ -24,8 +24,8 @@ public class NotesRepository {
 
     public LiveData<List<Notes>> highToLowR;
 
-    // Now hmne Database pe kxh Operations perform krwane he
-    // Like hmne data insert krwana he Dao ki help se Delete krwangy etc.
+    // Now we perform some operations on Database 
+    // With the help of Dao we can insert and Delete the data
 
     // Hmne Database ka instance chahiye
 
