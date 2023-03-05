@@ -1,5 +1,5 @@
 package com.example.notetakingappmvvm.Dao;
-// jese hmne Entity me btaya tha ye ik Entity he to hmne is interface class me bhii btatma prega ye hmari dao he
+// Need to Specify that this is our Dao Class like in Entity case
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Delete;
@@ -14,9 +14,9 @@ import java.util.List;
 @androidx.room.Dao
 public interface DaoClass {
 
-    // Hmne data lo get Krwana he from database jiskeliye hm query likhngy    >> Ctrl+Space to get Database name
-    // Hmne ik list chahiye jime Notes keliye sare attributes hot
-
+    // We need to perform some queries in database to add,update, dlete data   >> Ctrl+Space to get Database name
+    // We also need a List where our all attributes define 
+   
 
     // 1. ============================= Select Data or fetch data
     @Query("SELECT * FROM Notes_Db")
@@ -26,14 +26,14 @@ public interface DaoClass {
 
 
     //2.  ============Insert
-    // ab hmne insert keliye function bnanan he  >> ye notes automatically get hojyega
+    // Insert Data in notes 
     @Insert
     public void insertNotes(Notes... notes);
 
 
     // 3. ========================= Delete
-    // Ab hm delete krengy using id to hm query ka use krengy
-    // ye jo id hm dere he function me wo query me get hojyegi
+     // We delete the note using there id the id is get through query 
+     
     @Query("DELETE FROM Notes_Db WHERE id=:id")
     public void deleteNotes(int id);
 
@@ -42,7 +42,6 @@ public interface DaoClass {
     // 4. ========================= Update
     @Update
     public void updateNotes(Notes notes);
-
 
 
 
