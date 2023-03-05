@@ -7,14 +7,15 @@ import androidx.room.PrimaryKey;
 @Entity(tableName = "Notes_Db")
 public class Notes {
 
-    // Notes me hmne jo jo Attributes or Columns chaiye
+    // Attibutes or Columns Require in Notes
 
-    // Auto generate Key mean iski value khud increment hogi or ye unique hoga to hm isko primary key consider krengy
+    // Auto generate Key mean there value will be auto incremented
+    
     @PrimaryKey(autoGenerate = true)
     public int id;
 
 
-    // Ye hmare baki columns hongy database me jese SQL me hote he
+    // Other Columns of Our Table in Database 
 
     @ColumnInfo(name = "notes_Title")
     public String notesTitle;
