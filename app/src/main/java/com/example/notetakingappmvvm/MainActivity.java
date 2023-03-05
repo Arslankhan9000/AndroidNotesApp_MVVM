@@ -53,10 +53,10 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        // Live data hmne ik observer provide krta he jisse hm data ko observe krskte he har time
+        // Live data provide a observer through which we can observe a data 
 
 //        notesViewModel.getAllNotesVm.observe(this,notesList -> {
-//            // Hmne notes ki list milgegi isme or hmne usko recycler view pe set krwana he
+//            // We get a list of notes were we can show in recycler
 //
 //            binding.notesRecyclerView.setLayoutManager(new GridLayoutManager(this,2));
 //            notesAdapter = new NotesAdapter(this,notesList);
@@ -148,8 +148,7 @@ public class MainActivity extends AppCompatActivity {
     private void setAdapter(List<Notes> notesList) {
         // binding.notesRecyclerView.setLayoutManager(new GridLayoutManager(this,2));
 
-        // Hm StaggeredGrid layout ka use krengy kion ke height ik item me agr ik  ki
-        // zyda hoti he to us pure row effect hota he uski height me elements shi nhi lgte
+        // We use  StaggeredGrid layout because our notes hight will not be same , so our notes height will be effected 
 
         binding.notesRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL));
         notesAdapter = new NotesAdapter(this, notesList);
@@ -212,12 +211,11 @@ public class MainActivity extends AppCompatActivity {
 
         for(Notes notes : this.filterNameList)
         {
-            // Jo hmara notes ke titles he or jo hm newText me search krre he wo contain krta he yanhi
-            // Ya sub title se agr user search kre to
+            // our notes title, and the saerch field we search is match or contain
 
             if(notes.notesTitle.contains(newText) || notes.notesSubtitle.contains(newText))
             {
-               // So wo hmare new List me show krwayega jo match krta he data
+               //IT show in our new list 
                 filterNames.add(notes);
             }
             this.notesAdapter.searchNotes(filterNames);
