@@ -10,8 +10,8 @@ import com.example.notetakingappmvvm.Dao.DaoClass;
 import com.example.notetakingappmvvm.Model.Notes;
 
 
-// Database ko entity require he jo hmne bnyi he Notes.class
-// ,, Next database ka version dena he (jb hm database me kxh changing kre to version change krengy 2 )
+// A Database require an entity that we make in Notes.class
+// Next We define a database version to 1 initially, i.e after some times if we make changes in database stucture we can change the version to 2
 
 @Database(entities = {Notes.class},version = 1)
 public abstract class NotesDb extends RoomDatabase {
@@ -24,20 +24,21 @@ public abstract class NotesDb extends RoomDatabase {
 
     public static NotesDb getDatabaseInstance(Context context)
     {
-        // ye function hmne NotesDb return krega so hmne is NotesDb ka instance return krwana he
+        // This function return an instance of Notes Db class 
 
         if(INSTANCE == null)
         {
-          // agr instance null he mean hmara instance create nhi hua SO hmne instance ko create krwana he
-            // First hmne Context dena he
-            // Second hmne Room Database ki class provide krni he
-            // Third hmne Database ka name provide krna he jo Entity class me diya tha
+          // If our instance is null so this mean our instance is null and we need to create it
+            // First we provide a context
+            // Second We provide a room database class
+            // Third we provide a database name 
+            
             INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
                     NotesDb.class,
                     "Notes_Db").allowMainThreadQueries().build();
 
-            // So hmara long running operations keliye Main Thread block hojyega agr hm krte he
-            // So hm allow krengy Main Thread Queries ko > .allowMainThreadQueries()
+            // For long running operatios our main thread will be block so we need to allow 
+            // a Main Thread Queries  > .allowMainThreadQueries()
         }
 
         return INSTANCE;
